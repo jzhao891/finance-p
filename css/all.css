@@ -1,0 +1,154 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 10pt;
+	background-color: #EFFBFB;
+}
+/*设置按钮的高度*/
+input[type=button],input[type=submit],input[type=reset] {
+	height: 20px;
+	margin-right:5px;
+	cursor: pointer;
+}
+
+/*设置文本框的风格*/
+input[type=text],input[type=password],textarea {
+	border: 1px solid #84a1bd;
+	background: #E8FDFF;
+	font-size: 10pt;
+}
+
+/*鼠标变为手形*/
+*[name=selimg] {
+	cursor: pointer;
+}
+
+/*链接风格*/
+a:link {
+	font-size: 10pt;
+	text-decoration: none;
+}
+
+a:visited {
+	font-size: 10pt;
+	text-decoration: none;
+}
+
+a:hover {
+	font-size: 10pt;
+	color: #9900ff;
+	text-decoration: none;
+}
+
+/*新增编辑*/
+#edit {
+	border-bottom: 1px dotted #999999;
+	border-left: 1px dotted #999999;
+	border-top: 1px dotted #999999;
+	border-right: 1px dotted #999999;
+	margin-bottom: 10pt;
+}
+
+#formTable td {
+	text-align: left;
+}
+
+#formTable tr td:first-child {
+	text-align: right;
+}
+
+/*按钮区域*/
+#btnDiv {
+	height: 10%;
+	width: 100%;
+	text-align: right;
+	bottom: 0px;
+	padding-bottom: 10px;
+}
+
+/*按钮区域span*/
+#btnDiv span {
+	text-align: right;
+}
+
+/*字段不能为空提示*/
+#nel {
+	color: red;
+}
+
+/*结果提示*/
+#resultTip {
+	text-align: center;
+	background-color: #FFF1A8;
+	color: green;
+	font-weight: bold;
+	border: 1px dotted #999;
+	padding: 2px 5px 2px 4px;
+	width: 98%;
+	margin-top: 10px;
+	display: block;
+	border-bottom: none;
+	color: green;
+}
+
+/*高亮CSS*/
+.highlight {
+	background-color: yellow;
+	font-weight: bold;
+}
+
+/*菜单区域-开始*/
+#leftMenu a {
+	width: 110px;
+	display: block;
+	padding-left: 10px;
+}
+
+#leftMenu li {
+	background: #CCC;
+	border-bottom: #FFF 1px solid;
+	float: left;
+}
+
+#leftMenu li a:hover {
+	background: #CC0000;
+}
+
+#leftMenu a:link {
+	color: #666;
+	text-decoration: none;
+}
+
+#leftMenu a:visited {
+	color: #666;
+	text-decoration: none;
+}
+
+#leftMenu a:hover {
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/*菜单区域-结束*/ /*右边栏提示信息*/
+#rightTip label {
+	color: red;
+}
+
+/*人员树DIV*/
+#tree {
+	height: 350px;
+	width: 300px;
+	overflow: scroll;
+	overflow-y: hidden;
+	display: none;
+}
+
+.onLoad {
+	background: #E9FFEB url(../images/loading.gif) no-repeat 3px 3px;
+	padding-left: 25px;
+	height: 20px;
+	line-height: 20px;
+}

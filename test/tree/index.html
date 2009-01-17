@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+	<head>
+		<title>tree.html</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" src="../../common/js/jquery-last.js"></script>
+		<script type="text/javascript" src="../../common/js/plugin/jquery.simple.tree.js"></script>
+		<script type="text/javascript" src="../weebox/bgiframe.js"></script>
+		<script type="text/javascript" src="../weebox/weebox.js"></script>
+		<script type="text/javascript" src="tree.js"></script>
+		<style type="text/css">
+			@IMPORT url("../../css/all.css");
+			@IMPORT url("tree.css");
+			@IMPORT url("../weebox/weebox.css");
+		</style>
+	</head>
+
+	<body>
+		<center>
+			<div id='tree'
+				style='height: 340px; width: 300px; overflow: scroll; overflow-y: hidden; display: none;'>
+				<ul class="simpleTree">
+					<li class="root" id='1'>
+						<ul>
+							<li id='5'>
+								<span>账务管理系统</span>
+								<ul>
+									<li>
+										<span>总人员表</span>
+										<ul class='ajax'>
+											<li>
+												{url:../../tree/getGroupTree.do}
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<p>
+				已选择值：
+				<span id='seval'></span>
+			</p>
+			<hr />
+			<input type='button' id='openUserTree' value='弹出树' />
+		</center>
+	</body>
+</html>

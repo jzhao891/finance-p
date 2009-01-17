@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="net.yanhl.finance.pojo.FinanceMoneyDetail"
+		table="finance_money_detail" catalog="finance">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="increment" />
+		</id>
+		<property name="loanDate" type="java.sql.Date">
+			<column name="loan_date" length="0">
+				<comment>借款日期</comment>
+			</column>
+		</property>
+		<property name="fallinDate" type="java.sql.Date">
+			<column name="fallin_date" length="0">
+				<comment>到期还款日</comment>
+			</column>
+		</property>
+		<property name="totalArrearage" type="java.lang.Double">
+			<column name="total_arrearage" precision="22" scale="0">
+				<comment>欠款总额</comment>
+			</column>
+		</property>
+		<property name="requitedArrearage" type="java.lang.Double">
+			<column name="`requited_ arrearage`" precision="22" scale="0">
+				<comment>已还总额</comment>
+			</column>
+		</property>
+
+		<property name="createDate" type="java.util.Date">
+			<column name="create_date" length="0" not-null="true" />
+		</property>
+		<property name="creatorId" type="java.lang.Integer">
+			<column name="creator_id" not-null="true" />
+		</property>
+		<property name="financeType" type="java.lang.String">
+			<column name="finance_type" not-null="true">
+				<comment>借入(0)、借出(1)类型</comment>
+			</column>
+		</property>
+		<property name="debtType" type="java.lang.String">
+			<column name="debt_type" not-null="true">
+				<comment>借入(0)、借出(1)类型</comment>
+			</column>
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="remark" />
+		</property>
+		<many-to-one name="borrowUser" column="borrow_userid"
+			class="net.yanhl.iouser.pojo.Iouser" lazy="false" cascade="none"
+			unique="true" />
+	</class>
+</hibernate-mapping>

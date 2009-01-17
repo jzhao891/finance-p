@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+	"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- hibernate datasource-->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql:///finance?useUnicode=true&amp;characterEncoding=utf8"/>
+        <property name="username" value="yhl"/>
+        <property name="password" value="yhl"/>
+        <property name="maxActive" value="20"/>
+        <property name="maxIdle" value="10"/>
+        <property name="initialSize" value="1"/>
+        <property name="maxWait" value="1000"/>
+        <property name="defaultAutoCommit" value="true"/>
+        <property name="removeAbandoned" value="true"/>
+        <property name="removeAbandonedTimeout" value="60"/>
+        <property name="logAbandoned" value="true"/>
+    </bean>
+    <!-- Hibernate SessionFactory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mappingResources">
+            <list>
+                <value>net/yanhl/user/pojo/User.hbm.xml</value>
+                <value>net/yanhl/user/pojo/Contactinfo.hbm.xml</value>
+                <value>net/yanhl/finance/pojo/FinanceGoodsDetail.hbm.xml</value>
+                <value>net/yanhl/finance/pojo/FinanceMoneyDetail.hbm.xml</value>
+                <value>net/yanhl/iouser/pojo/GroupRelation.hbm.xml</value>
+                <value>net/yanhl/iouser/pojo/Iouser.hbm.xml</value>
+                <value>net/yanhl/goods/pojo/GoodsDetail.hbm.xml</value>
+                <value>net/yanhl/goods/pojo/GoodsType.hbm.xml</value>
+                <value>net/yanhl/talk/pojo/Talk.hbm.xml</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">none</prop>
+                <prop key="hibernate.jdbc.batch_size">20</prop> 
+            </props>
+        </property>
+    </bean>
+
+    <!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+	<bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+	    <!--  事务拦截器bean需要依赖注入一个事务管理器 -->
+        <property name="transactionManager" ref="transactionManager"/>
+    	<property name="transactionAttributes">
+		    <!--  下面定义事务传播属性-->
+		    <props>
+			    <prop key="get*,find*,load*">PROPAGATION_REQUIRED,readOnly</prop>
+		    	<prop key="*">PROPAGATION_REQUIRED</prop>
+		    </props>
+	    </property>
+	</bean>
+	
+	<!-- ***************************项目里使用的BEAN*************************** -->
+	<!-- 基础业务 -->
+	<bean id="baseManagerTemplate" abstract="true" lazy-init="false">
+        <property name="baseDao">
+            <ref bean="baseDao"/>
+        </property>
+	</bean>
+	
+	<bean id="userManagerTemplate" abstract="true" lazy-init="true">
+        <property name="userDao">
+            <ref bean="userDao"/>
+        </property>
+	</bean>
+	
+	<!-- 债务人、分组管理 -->
+	<bean id="iouserManagerTemplate" abstract="true" lazy-init="true" parent="baseManagerTemplate">
+        <property name="iouserDao">
+            <ref bean="iouserDao"/>
+        </property>
+	</bean>
+	
+	<bean id="groupManagerTemplate" abstract="true" lazy-init="true" parent="baseManagerTemplate"/>
+	
+	<!-- 下拉树管理 -->
+	<bean id="treeManagerTemplate" abstract="true" lazy-init="true" parent="baseManagerTemplate">
+		<property name="groupDao">
+        	<ref bean="groupDao"/>
+        </property>
+        <property name="iouserDao">
+            <ref bean="iouserDao"/>
+        </property>
+	</bean>
+	
+	<!-- 物品类型、详细管理 -->
+	<bean id="goodsTypeManagerTemplate" abstract="true" lazy-init="true" parent="baseManagerTemplate">
+        <property name="goodsTypeDao">
+            <ref bean="goodsTypeDao"/>
+        </property>
+	</bean>
+	
+	<bean id="goodsDetailManagerTemplate" abstract="true" lazy-init="true" parent="baseManagerTemplate">
+        <property name="goodsDetailDao">
+            <ref bean="goodsDetailDao"/>
+        </property>
+	</bean>
+	
+	<!-- 账务管理模块 -->
+	<bean id="financeManagerTemplate" abstract="true" lazy-init="true" parent="baseManagerTemplate">
+		<property name="financeDao">
+            <ref bean="financeDao"/>
+        </property>
+	</bean>
+	
+	<bean id="financeInManagerTemplate" abstract="true" lazy-init="true" parent="financeManagerTemplate">
+		 <property name="financeInDao">
+            <ref bean="financeInDao"/>
+        </property>
+	</bean>
+	
+	<!-- 聊天室 -->
+	<bean id="talkManagerTemplate" abstract="true" lazy-init="true" parent="baseManagerTemplate">
+		<property name="talkDao">
+            <ref bean="talkDao"/>
+        </property>
+	</bean>
+	
+	<bean id="baseManager" class="net.yanhl.base.service.BaseManagerImpl" parent="baseManagerTemplate"/>
+	<bean id="userManager" class="net.yanhl.user.service.UserManagerImpl" parent="userManagerTemplate"/>
+	<bean id="groupManager" class="net.yanhl.iouser.service.GroupManagerImpl" parent="groupManagerTemplate"/>
+	<bean id="iouserManager" class="net.yanhl.iouser.service.IouserManagerImpl" parent="iouserManagerTemplate"/>
+	<bean id="treeManager" class="net.yanhl.tree.service.TreeManagerImpl" parent="treeManagerTemplate"/>
+	<bean id="goodsTypeManager" class="net.yanhl.goods.service.GoodsTypeManagerImpl" parent="goodsTypeManagerTemplate"/>
+	<bean id="goodsDetailManager" class="net.yanhl.goods.service.GoodsDetailManagerImpl" parent="goodsDetailManagerTemplate"/>
+	<bean id="financeManager" class="net.yanhl.finance.service.FinanceManagerImpl" parent="financeManagerTemplate"/>
+	<bean id="financeInManager" class="net.yanhl.finance.service.FinanceInManagerImpl" parent="financeInManagerTemplate"/>
+	<bean id="talkManager" class="net.yanhl.talk.service.TalkManagerImpl" parent="talkManagerTemplate"/>
+	
+	<!-- 定义BeanNameAutoProxyCreator-->
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+	    <!--  指定对满足哪些bean name的bean自动生成业务代理 -->
+	    <property name="beanNames">
+            <!--  下面是所有需要自动创建事务代理的bean-->
+            <list>
+            	<value>baseManager</value>
+            	<value>userManager</value>
+            	<value>groupManager</value>
+            	<value>iouserManager</value>
+            	<value>treeManager</value>
+            	<value>goodsTypeManager</value>
+            	<value>goodsDetailManager</value>
+            	<value>financeManager</value>
+            	<value>financeInManager</value>
+            	<value>talkManager</value>
+            </list>
+            <!--  此处可增加其他需要自动创建事务代理的bean-->
+	    </property>
+        <!--  下面定义BeanNameAutoProxyCreator所需的事务拦截器-->
+        <property name="interceptorNames">
+            <list>
+                <!-- 此处可增加其他新的Interceptor -->
+                <value>transactionInterceptor</value> 
+            </list>
+        </property>
+    </bean>
+</beans>
