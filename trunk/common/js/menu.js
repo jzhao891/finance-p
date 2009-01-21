@@ -90,7 +90,6 @@ function refreshRightTipForDel(moduleName) {
  */
 function maxWork(eventTag) {
 	var eventSrc = eventTag.srcElement || eventTag.target;
-	alert($(eventSrc).text());
 	if ($(eventSrc).text() == '最大化') {
 		$('#c-col').css('margin', '0 0px 0 0px');
 		$(eventSrc).text('还  原');
