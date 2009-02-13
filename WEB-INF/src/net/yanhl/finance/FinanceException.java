@@ -4,7 +4,7 @@ package net.yanhl.finance;
  * 债务异常
  * 
  * @author 闫洪磊
- * @version 1.0.0.2008
+ * @version 1.0.0.20081210
  */
 public class FinanceException extends Exception {
 

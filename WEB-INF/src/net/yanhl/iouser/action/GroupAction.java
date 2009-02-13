@@ -25,11 +25,11 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 /**
- * 
- * @author 闫洪磊
- * @since Dec 4, 2008
- * 
- */
+ * <p>Title: 债务人分组Action</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20081204
+*/
 public class GroupAction extends BaseAction {
 	Log log = LogFactory.getLog(this.getClass());
 

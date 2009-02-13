@@ -3,9 +3,13 @@ package net.yanhl.base.service;
 import java.util.List;
 
 import net.yanhl.base.query.ListQuery;
-import net.yanhl.base.query.util.QueryUtil;
 
-
+/**
+ * <p>Title: 基础管理类</p>
+ * <p>Description: 对数据库进行CRUD操作</p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080601
+*/
 public interface BaseManager {
 	/**
 	 * 以对象类型和对象编号为标示,获取相对应的对象

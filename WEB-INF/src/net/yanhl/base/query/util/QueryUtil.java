@@ -23,18 +23,11 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 /**
- * <p>
- * Title: 查询工具类
- * </p>
- * <p>
- * Description:把ListQuery对象解析为HQL并执行查询
- * </p>
- * <p>
- * Copyright: Copyright (c) 2008
- * </p>
- * 
- * @author 闫洪磊
- */
+ * <p>Title: 查询工具类</p>
+ * <p>Description: 把ListQuery对象解析为HQL并执行查询</p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080615
+*/
 public class QueryUtil {
 
 	Log log = LogFactory.getLog(this.getClass());

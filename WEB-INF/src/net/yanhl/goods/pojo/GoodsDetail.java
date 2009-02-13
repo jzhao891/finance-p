@@ -10,6 +10,7 @@ import java.sql.Date;
  * 
  * @author 闫洪磊
  * @version 1.0.0.20080615
+ * @table  goods_detail
  */
 public class GoodsDetail implements Serializable{
 	// Fields

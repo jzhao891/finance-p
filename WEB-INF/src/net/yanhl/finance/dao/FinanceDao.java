@@ -1,7 +1,5 @@
 package net.yanhl.finance.dao;
 
-
-
 /**
  * <p>Title: 账务基础DAO接口</p>
  * <p>Description:</p>
@@ -11,6 +9,7 @@ package net.yanhl.finance.dao;
  * @version 1.0.0.20080720
  */
 public interface FinanceDao {
+	
 	/**
 	 * 统计用户总物品数
 	 * @param creatorId

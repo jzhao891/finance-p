@@ -22,6 +22,12 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+/**
+ * <p>Title: 物品类型管理</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080717
+*/
 public class GoodsTypeAction extends BaseAction {
 	Log log = LogFactory.getLog(this.getClass());
 	private GoodsTypeManager goodsTypeManager;

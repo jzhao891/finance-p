@@ -7,10 +7,11 @@ import net.yanhl.finance.FinanceException;
 import net.yanhl.finance.pojo.FinanceMoneyDetail;
 
 /**
- * @Title: 基础账务管理接口
- * 
- * @author 闫洪磊
- */
+ * <p>Title: 基础账务管理接口</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20081220
+*/
 public interface FinanceManager {
 	
 	/**

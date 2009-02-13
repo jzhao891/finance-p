@@ -19,6 +19,12 @@ import org.apache.struts.actions.MappingDispatchAction;
 import org.displaytag.tags.TableTagParameters;
 import org.displaytag.util.ParamEncoder;
 
+/**
+ * <p>Title: 系统架构基础Action类</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20090211
+*/
 public class BaseAction extends MappingDispatchAction {
 
 	Log log = LogFactory.getLog(this.getClass());
@@ -89,7 +95,7 @@ public class BaseAction extends MappingDispatchAction {
 	 */
 	protected void print(HttpServletResponse response, String info) throws IOException {
 		try {
-			response.getOutputStream().print(info);
+			response.getWriter().print(info);
 		} catch (IOException e) {
 			e.printStackTrace();
 			throw e;

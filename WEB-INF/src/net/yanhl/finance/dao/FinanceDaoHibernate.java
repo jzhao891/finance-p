@@ -3,14 +3,13 @@ package net.yanhl.finance.dao;
 import java.util.List;
 
 import net.yanhl.base.dao.BaseDaoHibernate;
-import net.yanhl.finance.util.FinanceUtil;
 
 /**
- * 
- * @author 闫洪磊
- * @since Dec 22, 2008
- *
- */
+ * <p>Title: 账务管理DAO的Hibernate实现类</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080720
+*/
 public class FinanceDaoHibernate extends BaseDaoHibernate implements FinanceDao {
 
 	/* (non-Javadoc)

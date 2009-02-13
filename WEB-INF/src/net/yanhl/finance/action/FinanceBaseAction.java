@@ -28,19 +28,11 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 /**
- * <p>
- * Title: 账务基础ACTION类
- * </p>
- * <p>
- * Description:
- * </p>
- * <p>
- * Copyright: Copyright (c) 2008
- * </p>
- * 
- * @author 闫洪磊
- * @version 1.0.0.20080720
- */
+ * <p>Title: 账务基础ACTION类</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.2009
+*/
 public class FinanceBaseAction extends BaseAction {
 	Log log = LogFactory.getLog(this.getClass());
 	protected final String FINANCE_TYPE_IN = "0";// 借入标志

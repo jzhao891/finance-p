@@ -12,11 +12,11 @@ import net.yanhl.finance.pojo.FinanceMoneyDetail;
 import net.yanhl.util.UserUtil;
 
 /**
- * 
- * @author 闫洪磊
- * @since Dec 22, 2008
- *
- */
+ * <p>Title: </p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20081222
+*/
 public class FinanceManagerImpl extends BaseManagerImpl implements FinanceManager {
 	
 	private FinanceDao financeDao;

@@ -5,11 +5,11 @@ import java.util.List;
 import net.yanhl.iouser.pojo.Iouser;
 
 /**
- * 债务人DAO接口
- * @author 闫洪磊
- * @since Nov 29, 2008
- *
- */
+ * <p>Title: 债务人DAO接口</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080524
+*/
 public interface IOUserDao {
 	List<Iouser> getIouserByName(String userName);
 

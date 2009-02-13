@@ -6,13 +6,12 @@ import net.yanhl.iouser.pojo.Iouser;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-
 /**
- * 债务人DAO对象Hibernate实现类
- * @author 闫洪磊
- * @since Nov 29, 2008
- *
- */
+ * <p>Title: 债务人DAO对象Hibernate实现类</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080524
+*/
 public class IOUSerDaoHibernate extends HibernateDaoSupport implements IOUserDao {
 
 	/*

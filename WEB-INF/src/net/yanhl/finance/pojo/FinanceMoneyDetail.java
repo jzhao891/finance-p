@@ -9,6 +9,7 @@ import net.yanhl.iouser.pojo.Iouser;
  * FinanceMoneyDetail entity.
  * 
  * @author MyEclipse Persistence Tools
+ * @table  finance_money_detail
  */
 
 public class FinanceMoneyDetail implements java.io.Serializable {

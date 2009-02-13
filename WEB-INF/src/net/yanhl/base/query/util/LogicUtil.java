@@ -2,6 +2,12 @@ package net.yanhl.base.query.util;
 
 import org.apache.commons.lang.StringUtils;
 
+/**
+ * <p>Title: 查询逻辑处理工具类</p>
+ * <p>Description: 暂时没有考虑SQL注入问题，后续版本会做优化</p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080615
+*/
 public class LogicUtil {
 
 	/**

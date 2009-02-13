@@ -16,57 +16,74 @@ import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 /**
- * <p>
- * Title: 基础DAO实现类
- * </p>
- * <p>
- * Description:
- * </p>
- * <p>
- * Copyright: Copyright (c) 2008
- * </p>
- * 
- * @author 闫洪磊
- * @version 1.0.0.20080703
- */
+ * <p>Title: 基础DAO实现类</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080703
+*/
 public class BaseDaoHibernate extends HibernateDaoSupport implements BaseDao {
 
+	/* (non-Javadoc)
+	 * @see net.yanhl.base.dao.BaseDao#delete(java.lang.Object)
+	 */
 	public void delete(Object pojo) throws RuntimeException {
 		getHibernateTemplate().delete(pojo);
 	}
 
+	/* (non-Javadoc)
+	 * @see net.yanhl.base.dao.BaseDao#delete(java.lang.Class, java.io.Serializable)
+	 */
 	@SuppressWarnings("unchecked")
 	public void delete(Class pojoClass, Serializable id) throws RuntimeException {
 		getHibernateTemplate().delete(loadById(pojoClass, id));
 	}
 
+	/* (non-Javadoc)
+	 * @see net.yanhl.base.dao.BaseDao#find(java.lang.String)
+	 */
 	@SuppressWarnings("unchecked")
 	public List find(String hql) throws RuntimeException {
 		return getHibernateTemplate().find(hql);
 	}
 
+	/* (non-Javadoc)
+	 * @see net.yanhl.base.dao.BaseDao#save(java.lang.Object)
+	 */
 	public void save(Object pojo) throws RuntimeException {
 		getHibernateTemplate().save(pojo);
 	}
 
+	/* (non-Javadoc)
+	 * @see net.yanhl.base.dao.BaseDao#loadById(java.lang.Class, java.io.Serializable)
+	 */
 	@SuppressWarnings("unchecked")
 	public Object loadById(Class pojoClass, Serializable id) throws RuntimeException {
 		return getHibernateTemplate().get(pojoClass, id);
 	}
 
+	/* (non-Javadoc)
+	 * @see net.yanhl.base.dao.BaseDao#update(java.lang.Object)
+	 */
 	public void update(Object pojo) throws RuntimeException {
 		getHibernateTemplate().update(pojo);
 	}
 
+	/* (non-Javadoc)
+	 * @see net.yanhl.base.dao.BaseDao#insertOrUpdate(java.lang.Object)
+	 */
 	public void insertOrUpdate(Object pojo) throws RuntimeException {
 		getHibernateTemplate().saveOrUpdate(pojo);
 	}
 
+	/* (non-Javadoc)
+	 * @see net.yanhl.base.dao.BaseDao#deleteAll(java.lang.Class, java.lang.Long[])
+	 */
 	@SuppressWarnings("unchecked")
 	public void deleteAll(final Class pojoName, final Long[] ids) throws RuntimeException {
 		getHibernateTemplate().execute(new HibernateCallback() {
 			public Object doInHibernate(Session session) throws HibernateException, SQLException {
-				Query deleteQuery = session.createQuery("delete from " + pojoName.getName() + " where id in(:ids)");
+				Query deleteQuery = session.createQuery("delete from " + pojoName.getName()
+						+ " where id in(:ids)");
 				deleteQuery.setParameterList("ids", ids);
 				int dels = deleteQuery.executeUpdate();
 				return dels;
@@ -75,6 +92,9 @@ public class BaseDaoHibernate extends HibernateDaoSupport implements BaseDao {
 		});
 	}
 
+	/* (non-Javadoc)
+	 * @see net.yanhl.base.dao.BaseDao#find(net.yanhl.base.query.ListQuery)
+	 */
 	@SuppressWarnings("unchecked")
 	public List find(final ListQuery listQuery) throws RuntimeException {
 		final QueryUtil queryUtil = new QueryUtil();

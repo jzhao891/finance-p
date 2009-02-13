@@ -3,13 +3,13 @@ package net.yanhl.finance.dao;
 import java.util.List;
 
 import net.yanhl.base.dao.BaseDaoHibernate;
-import net.yanhl.finance.util.FinanceUtil;
 
 /**
- * Title: 账务借入DAO接口
- * 
- * @author 闫洪磊
- */
+ * <p>Title: 账务借入DAO接口</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080720
+*/
 public class FinanceInDaoHibernate extends BaseDaoHibernate implements FinanceInDao {
 
 	/*

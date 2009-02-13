@@ -6,19 +6,11 @@ import net.yanhl.base.dao.BaseDaoHibernate;
 import net.yanhl.goods.pojo.GoodsType;
 
 /**
- * <p>
- * Title: 物品类型DAO
- * </p>
- * <p>
- * Description:
- * </p>
- * <p>
- * Copyright: Copyright (c) 2008
- * </p>
- * 
- * @author 闫洪磊
- * @version 1.0.0.2008
- */
+ * <p>Title: 物品类型DAO</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080619
+*/
 public class GoodsTypeDaoHibernate extends BaseDaoHibernate implements GoodsTypeDao {
 	
 	public List<Object[]> findAllGoodsType(String userId) {

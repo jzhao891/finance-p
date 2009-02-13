@@ -11,19 +11,11 @@ import net.yanhl.finance.pojo.FinanceMoneyDetail;
 import net.yanhl.util.UserUtil;
 
 /**
- * <p>
- * Title: 借入业务实现类
- * </p>
- * <p>
- * Description:
- * </p>
- * <p>
- * Copyright: Copyright (c) 2008
- * </p>
- * 
- * @author 闫洪磊
- * @version 1.0.0.20080720
- */
+ * <p>Title: 借入业务实现类</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20081220
+*/
 public class FinanceInManagerImpl extends FinanceManagerImpl implements FinanceInManager {
 
 	private FinanceInDao financeInDao;

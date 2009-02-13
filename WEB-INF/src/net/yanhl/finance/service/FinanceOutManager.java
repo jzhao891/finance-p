@@ -6,7 +6,7 @@ package net.yanhl.finance.service;
  * <p>Copyright: Copyright (c) 2008</p>
  * 
  * @author 闫洪磊
- * @version 1.0.0.20080720
+ * @version 1.0.0.20081220
  */
 public interface FinanceOutManager {
 

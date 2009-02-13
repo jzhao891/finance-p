@@ -6,6 +6,7 @@ import java.util.Date;
  * Iouser entity.
  * 
  * @author 闫洪磊
+ * @table  iouser
  */
 
 public class Iouser implements java.io.Serializable {

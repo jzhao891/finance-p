@@ -4,22 +4,13 @@ import java.io.Serializable;
 import java.util.List;
 
 import net.yanhl.base.query.ListQuery;
-import net.yanhl.base.query.util.QueryUtil;
 
 /**
- * <p>
- * Title: 基础DAO接口
- * </p>
- * <p>
- * Description:
- * </p>
- * <p>
- * Copyright: Copyright (c) 2008
- * </p>
- * 
- * @author 闫洪磊
- * @version 1.0.0.20080703
- */
+ * <p>Title: 基础DAO接口</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080703
+*/
 public interface BaseDao {
 	/**
 	 * 根据类和id找到pojo对象
@@ -97,7 +88,7 @@ public interface BaseDao {
 	 * @throws RuntimeException
 	 */
 	public void deleteAll(Class pojoName, Long[] ids) throws RuntimeException;
-	
+
 	/**
 	 * 查找所有符合条件的记录
 	 * @param listQuery 查询条件
@@ -105,5 +96,5 @@ public interface BaseDao {
 	 * @throws RuntimeException
 	 */
 	public List find(ListQuery listQuery) throws RuntimeException;
-	
+
 }
