@@ -183,6 +183,7 @@ function financeManager() {
 /**********************测试模块******************* */
 function test() {
 	var menus = [
+		{href : 'test/test.html', name : '测试'},
 		{href : 'test/block/', name : '组件锁定'},
 		{href : 'test/tree/', name : '下拉树'},
 		{href : 'test/my97/', name : 'My97日历'},

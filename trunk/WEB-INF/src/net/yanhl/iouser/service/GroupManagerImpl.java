@@ -9,11 +9,11 @@ import net.yanhl.iouser.pojo.GroupRelation;
 import net.yanhl.util.UserUtil;
 
 /**
- * 
- * @author 闫洪磊
- * @since Dec 4, 2008
- * 
- */
+ * <p>Title: 债务人分组管理实现类</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20081204
+*/
 public class GroupManagerImpl extends BaseManagerImpl implements GroupManager {
 
 	/*

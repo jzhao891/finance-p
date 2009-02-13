@@ -3,19 +3,11 @@ package net.yanhl.base.query;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * <p>
- * Title: 列表查询对象
- * </p>
- * <p>
- * Description:
- * </p>
- * <p>
- * Copyright: Copyright (c) 2008
- * </p>
- * 
- * @author 闫洪磊
- * @version 1.0.0.20080702
- */
+ * <p>Title: 列表查询对象</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080702
+*/
 public class ListQuery extends BaseQuery {
 
 	private int pageIndex = 0;// 当前页

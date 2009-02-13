@@ -4,6 +4,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import net.yanhl.user.pojo.*;
 
+/**
+ * <p>Title: 用户工具类</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080504
+*/
 public class UserUtil {
 	public static final String LOGIN_USER = "user";
 	public static final String FORWARD_LOGIN = "login";

@@ -5,19 +5,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * <p>
- * Title: 物品类型POJO
- * </p>
- * <p>
- * Description:
- * </p>
- * <p>
- * Copyright: Copyright (c) 2008
- * </p>
- * 
- * @author 闫洪磊
+ * <p>Title: 物品类型POJO</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
  * @version 1.0.0.20080615
- */
+ * @table  goods_type
+*/
 public class GoodsType implements java.io.Serializable {
 	private static final long serialVersionUID = 7552285226201978718L;
 	private Long id;

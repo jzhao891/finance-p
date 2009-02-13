@@ -6,11 +6,11 @@ import net.yanhl.base.query.ListQuery;
 import net.yanhl.iouser.pojo.GroupRelation;
 
 /**
- * 
- * @author 闫洪磊
- * @since Dec 4, 2008
- *
- */
+ * <p>Title: 债务人分组管理类</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20081204
+*/
 public interface GroupManager {
 
 	/**

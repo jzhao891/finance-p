@@ -14,19 +14,11 @@ import net.yanhl.util.StringUtil;
 import org.hibernate.Query;
 
 /**
- * <p>
- * Title: 查询基类
- * </p>
- * <p>
- * Description:
- * </p>
- * <p>
- * Copyright: Copyright (c) 2008
- * </p>
- * 
- * @author 闫洪磊
- * @version 1.0.0.20080613
- */
+ * <p>Title: 查询基类</p>
+ * <p>Description: 临时保存查询条件</p>
+ * @author	闫洪磊
+ * @version	1.0.0.20020080613
+*/
 public class BaseQuery {
 	public static final String AND = "and";
 	public static final String OR = "or";

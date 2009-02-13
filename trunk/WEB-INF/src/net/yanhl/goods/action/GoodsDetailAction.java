@@ -25,19 +25,11 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 /**
- * <p>
- * Title: 物品详细管理Action
- * </p>
- * <p>
- * Description:
- * </p>
- * <p>
- * Copyright: Copyright (c) 2008
- * </p>
- * 
- * @author 闫洪磊
- * @version 1.0.0.20080617
- */
+ * <p>Title: 物品详细管理Action</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080617
+*/
 public class GoodsDetailAction extends BaseAction {
 	Log log = LogFactory.getLog(this.getClass());
 	private GoodsDetailManager goodsDetailManager;

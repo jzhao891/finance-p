@@ -5,20 +5,11 @@ import java.util.List;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 /**
- * <p>
- * Title: 物品详细DAO实现类
- * </p>
- * <p>
- * Description:
- * </p>
- * <p>
- * Copyright: Copyright (c) 2008
- * </p>
- * 
- * @author 闫洪磊
- * 
- * @version 1.0.0.20080619
- */
+ * <p>Title: 物品详细DAO实现类</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080619
+*/
 public class GoodsDetailDaoHibernate extends HibernateDaoSupport implements GoodsDetailDao {
 
 	public int count(String creatorId) {

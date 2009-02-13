@@ -10,6 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.StringUtils;
 
+/**
+ * <p>Title: 字符串操作工具类</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080504
+*/
 public class StringUtil {
 
 	public final static String FORMAT_DATE = "yyyy-MM-dd";

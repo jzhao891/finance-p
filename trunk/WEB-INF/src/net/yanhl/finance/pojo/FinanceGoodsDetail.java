@@ -8,6 +8,7 @@ import net.yanhl.goods.pojo.GoodsDetail;
  * FinanceGoodsDetail entity.
  * 
  * @author MyEclipse Persistence Tools
+ * @table  finance_goods_detail
  */
 
 public class FinanceGoodsDetail implements java.io.Serializable {

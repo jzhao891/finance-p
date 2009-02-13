@@ -6,11 +6,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 债务人组POJO
- * 
- * @author 闫洪磊
- * 
- */
+ * <p>Title: 债务人组POJO</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20081204
+ * @table  iouser_group_relation
+*/
 public class GroupRelation implements Serializable {
 
 	private static final long serialVersionUID = 6202253180943473205L;

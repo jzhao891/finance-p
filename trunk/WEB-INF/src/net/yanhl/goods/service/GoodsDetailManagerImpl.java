@@ -10,19 +10,11 @@ import net.yanhl.goods.pojo.GoodsDetail;
 import net.yanhl.util.UserUtil;
 
 /**
- * <p>
- * Title:物品相信实现类
- * </p>
- * <p>
- * Description:
- * </p>
- * <p>
- * Copyright: Copyright (c) 2008
- * </p>
- * 
- * @author 闫洪磊
- * @version 1.0.0.2008
- */
+ * <p>Title: 物品详细实现类</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080616
+*/
 public class GoodsDetailManagerImpl extends BaseManagerImpl implements GoodsDetailManager {
 
 	private GoodsDetailDao goodsDetailDao;

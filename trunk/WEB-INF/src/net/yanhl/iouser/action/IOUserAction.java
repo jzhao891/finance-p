@@ -27,19 +27,11 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 /**
- * <p>
- * Title: 债务人管理
- * </p>
- * <p>
- * Description:
- * </p>
- * <p>
- * Copyright: Copyright (c) 2008
- * </p>
- * 
- * @author 闫洪磊
- * @version 1.0.0.20080524
- */
+ * <p>Title: 债务人管理</p>
+ * <p>Description: </p>
+ * @author	闫洪磊
+ * @version	1.0.0.20080524
+*/
 public class IOUserAction extends BaseAction {
 	Log log = LogFactory.getLog(this.getClass());
 	private IouserManager iouserManager;
