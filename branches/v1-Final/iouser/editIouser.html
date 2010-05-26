@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<form action="add.do" id="userForm" name="userForm" method="post">
+	<input type='hidden' name='companyPhone' id='companyPhone'/>
+	<input type='hidden' name='groupId' id='groupId'/>
+	<table style="width: 100%;" border="0" id='formTable'>
+		<tr><td>&nbsp;</td><td><div id='statusTip'></div></td></tr>
+		<tr>
+			<td>分组：</td>
+			<td style="width: 40%">
+				<input type='text' name='groupName' id='groupName' noempty='true'/>
+				<img id='getGroup' name="selimg" src="../images/person.jpg" title='点击选择分组' width="16" height="16">
+			</td>
+			<td style='width:30%'><div id='groupNameTip'></div></td>
+		</tr>
+		<tr>
+			<td>姓名：</td>
+			<td style="width: 40%">
+				<input type='text' name='userName' id='userName' noempty='true'/>
+			</td>
+			<td style='width:30%'><div id='userNameTip'></div></td>
+		</tr>
+		<tr>
+			<td>性别：</td>
+			<td>
+				<input type="radio" value="1" id="sex1" name="sex" />
+				<label for='sex1'>男</label>&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" value="0" id="sex0" name="sex" />
+				<label for='sex0' noempty='true'>女</label>
+			</td>
+			<td><div id='sexTip'></div></td>
+		</tr>
+
+		<tr>
+			<td>年龄：</td>
+			<td><input type='text' name='age' id='age'/></td>
+			<td><div id='ageTip'></div></td>
+		</tr>
+		<tr>
+			<td>手机：</td>
+			<td><input type='text' name='mobilePhone' id='mobilePhone'/></td>
+			<td><div id='mobilePhoneTip'></div></td>
+		</tr>
+		
+		<tr>
+			<td>家庭电话：</td>
+			<td><input type='text' name='homePhone' id='homePhone' maxlength="13"/></td>
+			<td><div id='homePhoneTip'></div></td>
+		</tr>
+		<tr>
+			<td>家庭地址：</td>
+			<td><input type='text' name='homeAddress' id='homeAddress' size="50" /></td>
+			<td><div id='homeAddressTip'></div></td>
+		</tr>
+		<tr>
+			<td>家庭-邮编：</td>
+			<td><input type='text' name='homeZip' id='homeZip'/></td>
+			<td><div id='homeZipTip'></div></td>
+		</tr>
+		<tr>
+			<td>公司名称：</td>
+			<td><input type='text' name='companyName' id='companyName' size="50" /></td>
+			<td><div id='companyName'></div></td>
+		</tr>
+		<tr>
+			<td>公司电话：</td>
+			<td>
+				<span>区号 
+			        <input type='text' id="tel_area" name="tel_area" size='4' maxlength="4"/>
+			        -总机 
+			        <input type='text' id="tel_number" name="tel_number" size='8' maxlength="8"/>
+			        -分机 
+			        <input type='text' id="tel_ext" name="tel_ext" size='5' maxlength="5"/>
+	        	</span>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><div id='teltip'></div></td>
+		</tr>
+		<tr>
+			<td>公司地址：</td>
+			<td><input type='text' name='companyAddress' id='companyAddress' size="50"/></td>
+		</tr>
+		<tr>
+			<td>公司-邮编：</td>
+			<td><input type='text' name='companyZip' id='companyZip'/></td>
+		</tr>
+		<tr>
+			<td>备注：</td>
+			<td><textarea rows="5" cols="40" name='remark' id='remark'></textarea></td>
+		</tr>
+
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+				<input type='submit' name='submit' id='submit' title="保存" value="保 存" />
+				<input type='button' id='resetBtn' validaor='true' title="重置表单" value="重 置" />
+				<input type='button' name='cancel' id='cancel' title="取消操作" value="取 消" />
+			</td>
+		</tr>
+	</table>
+</form>

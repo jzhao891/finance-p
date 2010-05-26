@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    <bean name="baseActionTemplate" singleton="false" class="net.yanhl.base.action.BaseAction">
+        <property name="baseManager">
+            <ref bean="baseManager"/>
+        </property>
+    </bean>
+        <!--====================================================================-->
+        <!--============================下面是用户的Action========================-->
+        <!--====================================================================-->
+
+    <bean name="userActionTemplate" class="net.yanhl.user.action.UserAction" singleton="false">
+        <property name="userManager">
+            <ref bean="userManager"/>
+        </property>
+    </bean>
+    
+    <!--  处理登陆-->
+    <bean name="/login" parent="userActionTemplate"/>
+    <!--  处理登出-->
+    <bean name="/logout" parent="userActionTemplate"/>
+    <!--  处理注册-->
+    <bean name="/registe" parent="userActionTemplate"/>
+    <bean name="/changePwd" parent="userActionTemplate"/>
+    
+    	<!--====================================================================-->
+        <!--===========================下面是借入出款人的Action=====================-->
+        <!--====================================================================-->
+    <bean name="groupActionTemplate"  class="net.yanhl.iouser.action.GroupAction" singleton="false" parent="baseActionTemplate">
+    	<property name="groupManager">
+            <ref bean="groupManager"/>
+        </property>
+    </bean>
+    <bean name="/iouser/groupList" parent="groupActionTemplate"/>
+    <bean name="/iouser/addGroup" parent="groupActionTemplate"/>
+    <bean name="/iouser/loadGroup" parent="groupActionTemplate"/>
+    <bean name="/iouser/updateGroup" parent="groupActionTemplate"/>
+    <bean name="/iouser/deleteGroup" parent="groupActionTemplate"/>
+    
+    <bean name="iouserActionTemplate"  class="net.yanhl.iouser.action.IOUserAction" singleton="false" parent="baseActionTemplate">
+        <property name="iouserManager">
+            <ref bean="iouserManager"/>
+        </property>
+    </bean>
+    
+    <bean name="/iouser/check" parent="iouserActionTemplate"/>
+    <bean name="/iouser/add" parent="iouserActionTemplate"/>
+    <bean name="/iouser/delete" parent="iouserActionTemplate"/>
+    <bean name="/iouser/update" parent="iouserActionTemplate"/>
+    <bean name="/iouser/load" parent="iouserActionTemplate"/>
+    <bean name="/iouser/iouserList" parent="iouserActionTemplate"/>
+    <bean name="/iouser/count" parent="iouserActionTemplate"/>
+    
+       	<!--====================================================================-->
+        <!--============================下面是人员树的Action======================-->
+        <!--====================================================================-->
+    <bean name="treeActionTemplate" class="net.yanhl.tree.action.TreeAction" singleton="false" parent="baseActionTemplate">
+        <property name="treeManager">
+            <ref bean="treeManager"/>
+        </property>
+    </bean>
+	
+	<bean name="/tree/getUserTree" parent="treeActionTemplate"/>
+	<bean name="/tree/getGroupTree" parent="treeActionTemplate"/>
+    
+    	<!--====================================================================-->
+        <!--===========================下面是物品类型的Action=====================-->
+        <!--====================================================================-->
+    <bean name="goodsTypeActionTemplate" class="net.yanhl.goods.action.GoodsTypeAction" 
+    		 singleton="false" parent="baseActionTemplate">
+        <property name="goodsTypeManager">
+            <ref bean="goodsTypeManager"/>
+        </property>
+    </bean>
+    
+    <bean name="/goods/type/goodsTypeList" parent="goodsTypeActionTemplate"/>
+    <bean name="/goods/type/add"  parent="goodsTypeActionTemplate"/>
+    <bean name="/goods/type/delete"  parent="goodsTypeActionTemplate"/>
+    <bean name="/goods/type/update"  parent="goodsTypeActionTemplate"/>
+    <bean name="/goods/type/load"  parent="goodsTypeActionTemplate"/>
+    <bean name="/goods/type/isExist"  parent="goodsTypeActionTemplate"/>
+    <bean name="/goods/type/allType"  parent="goodsTypeActionTemplate"/>
+    <bean name="/goods/type/count" parent="goodsTypeActionTemplate"/>
+    
+    	<!--====================================================================-->
+        <!--===========================下面是物品类型的Action=====================-->
+        <!--====================================================================-->
+    <bean name="goodsDetailActionTemplate" class="net.yanhl.goods.action.GoodsDetailAction" singleton="false" parent="baseActionTemplate">
+        <property name="goodsDetailManager">
+            <ref bean="goodsDetailManager"/>
+        </property>
+    </bean>
+    
+    <bean name="/goods/detail/add" parent="goodsDetailActionTemplate"/>
+    <bean name="/goods/detail/delete" parent="goodsDetailActionTemplate"/>
+    <bean name="/goods/detail/update" parent="goodsDetailActionTemplate"/>
+    <bean name="/goods/detail/load" parent="goodsDetailActionTemplate"/>
+    <bean name="/goods/detail/goodsDetailList" parent="goodsDetailActionTemplate"/>
+    <bean name="/goods/detail/getAllUnit" parent="goodsDetailActionTemplate"/>
+    <bean name="/goods/detail/count" parent="goodsDetailActionTemplate"/>
+    
+      	<!--====================================================================-->
+        <!--===========================下面是聊天室的Action=====================-->
+        <!--====================================================================-->
+    <bean name="talkActionTemplate" class="net.yanhl.talk.action.TalkAction" singleton="false" parent="baseActionTemplate">
+        <property name="talkManager">
+            <ref bean="talkManager"/>
+        </property>
+    </bean>
+    
+    <bean name="/talk/addMsg" parent="talkActionTemplate"/>
+    <bean name="/talk/getMsg" parent="talkActionTemplate"/>
+    
+      	<!--====================================================================-->
+        <!--===========================下面是借入/借出的Action=====================-->
+        <!--====================================================================-->
+    <bean name="financeBaseActionTemplate" class="net.yanhl.finance.action.FinanceBaseAction" singleton="false" parent="baseActionTemplate">
+    	<property name="financeManager">
+    		<ref bean="financeManager"/>
+    	</property>
+    </bean>
+    <bean name="financeInActionTemplate" class="net.yanhl.finance.action.FinanceInAction" singleton="false" parent="financeBaseActionTemplate">
+        <property name="financeInManager">
+            <ref bean="financeInManager"/>
+        </property>
+    </bean>
+	
+	<bean name="/finance/listMoney" parent="financeBaseActionTemplate"/>
+	<bean name="/finance/addMoney" parent="financeBaseActionTemplate"/>
+	<bean name="/finance/deleteMoney" parent="financeBaseActionTemplate"/>
+	<bean name="/finance/loadMoney" parent="financeBaseActionTemplate"/>
+	<bean name="/finance/updateMoney" parent="financeBaseActionTemplate"/>
+	<bean name="/finance/count" parent="financeBaseActionTemplate"/>
+	<bean name="/finance/repay" parent="financeBaseActionTemplate"/>
+	
+	   	<!--====================================================================-->
+        <!--============================下面是测试模块的Action======================-->
+        <!--====================================================================-->
+    <bean name="/test/upload/fileupload" class="net.yanhl.UploadFile" singleton="false" parent="baseActionTemplate">
+    </bean>
+	    
+    	<!--====================================================================-->
+        <!--==============================下面是其他附加设置========================-->
+        <!--====================================================================-->
+        
+    <!--  用户权限拦截器生成代理  -->
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+	    <property name="beanNames">
+            <list>
+            	<value>/iouser/*</value>
+            	<value>/goods/*</value>
+            	<value>/finance/*</value>
+            	<value>/talk/*</value>
+            	<value>/changePwd</value>
+            </list>
+	    </property>
+        <property name="interceptorNames">
+            <list>
+                <value>userAuthorityInterceptor</value> 
+            </list>
+        </property>
+    </bean>
+
+    <!-- 定义用户权限检查拦截器 -->
+	<bean id="userAuthorityInterceptor" class="net.yanhl.struts.authority.UserAuthorityInterceptor"/>
+</beans>

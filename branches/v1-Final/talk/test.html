@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>聊天室</title>
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="description" content="this is my page"/>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript" src="../common/js/jquery-last.js"></script>
+		<script type="text/javascript"
+			src="../common/js/plugin/jquery.form.js"></script>
+			<script type="text/javascript" src="../common/js/common.js"></script>
+		<style type="text/css">
+			@IMPORT url("../css/all.css");
+		</style>
+		<script type="text/javascript">
+				var mynum = 1;
+			$(document).ready(function(){
+				// 表单提交设置
+				var formSubmitOptions = {
+					//beforeSubmit : showRequest,
+					success : showResponse,
+					clearForm : false
+				};
+				
+				$('#msgForm').submit(function() {
+					$(this).ajaxSubmit(formSubmitOptions);
+					return false;
+				});
+				window.setInterval("go()",1000);
+			});
+			
+			function go(){
+			$('#message').val('第' + mynum + '次消息');
+			mynum+=1;
+				$('#msgForm').submit();
+			}
+			
+						/**
+			 * 表单响应处理
+			 * 
+			 * @param {}
+			 *            responseText
+			 * @param {}
+			 *            statusText
+			 */
+			function showResponse(responseText, statusText) {
+				if (statusText == 'success' && responseText == 'success') {
+					var msg = '<我>&nbsp;&nbsp;'+ $('#message').val() + '&nbsp;&nbsp;' + getCurrentDateTime() + '<br/>';
+					$('#msgs').append(msg);
+					$('#message').val('');
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type='hidden' id='lastDate'/>
+		<table width="891" height="486">
+			<tr>
+				<td height="90%">
+					<div id='msgs' style="width:80%;height:100%;overflow-x:hidden;overflow-y:scroll"></div>
+				</td>
+				<td height="90%">
+					<div id='users' style="width:80%;height:100%;overflow-x:hidden;overflow-y:scroll">用户列表</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td style="height:10">
+					<form action="addMsg.do" name="msgForm" id='msgForm' method="post">
+						<p>
+							<input type="text" name='message' id='message' size="100"/>
+							<input type="submit" name="submit" id="submit" value="发 送"/>
+							<input type="button" name="clear" id="clear" value="清空列表"/>
+						</p>
+					</form>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

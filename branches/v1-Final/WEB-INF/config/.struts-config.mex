@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/logout.do" location="0,382" dimension="69,64" />
+  <StrutsActivity path="/login.do" location="250,150" dimension="62,64" />
+  <StrutsActivity path="/registe.do" location="412,150" dimension="73,64" />
+  <StrutsActivity path="/iouser/add.do" location="312,273" dimension="91,64" />
+  <StrutsActivity path="/iouser/delete.do" location="165,273" dimension="102,64" />
+  <StrutsActivity path="/iouser/iouserList.do" location="0,273" dimension="120,64" />
+  <StrutsActivity path="error;6" location="0,0" dimension="81,78" />
+  <StrutsActivity path="login;6" location="126,0" dimension="79,78" />
+  <StrutsActivity path="input" location="338,0" dimension="52,50" />
+  <StrutsActivity path="/error.jsp" location="4,178" dimension="72,50" />
+  <StrutsActivity path="/login.jsp" location="130,178" dimension="70,50" />
+  <StrutsTransition id="input,null,/registe.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="377,50" />
+      <AbsolutePoint location="377,100" />
+      <AbsolutePoint location="448,100" />
+      <AbsolutePoint location="448,150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="login;6,null,/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="165,78" />
+      <AbsolutePoint location="165,178" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="input,null,/login.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="351,50" />
+      <AbsolutePoint location="351,100" />
+      <AbsolutePoint location="281,100" />
+      <AbsolutePoint location="281,150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="error;6,null,/error.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="40,78" />
+      <AbsolutePoint location="40,178" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

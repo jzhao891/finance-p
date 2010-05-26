@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERDiagram version="1.1">
+  <Connection session="mysql" database="finance" />
+  <Drawing gridVisible="false" snapOn="false" fastRouting="false" labelsVisible="true" />
+  <Tables>
+    <Table name="contactinfo">
+      <Drawing expanded="true" location="352,841" dimensions="155,66" />
+      <Columns>
+        <Column name="contactid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="userid" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="finance_goods_detail">
+      <Drawing expanded="true" location="841,0" dimensions="193,206" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="goods_id" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="create_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATETIME" />
+        </Column>
+        <Column name="creator_id" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="iouser_id" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="finance_type" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="goods_num" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="unit_price" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DOUBLE" size="22" />
+        </Column>
+        <Column name="total" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DOUBLE" size="22" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="finance_money_detail">
+      <Drawing expanded="true" location="74,0" dimensions="245,246" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="creator_id" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="create_date" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="DATETIME" />
+        </Column>
+        <Column name="borrow_userid" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="loan_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+        <Column name="fallin_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+        <Column name="total_arrearage" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="DOUBLE" size="22" />
+        </Column>
+        <Column name="requited_ arrearage" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DOUBLE" size="22" />
+        </Column>
+        <Column name="finance_type" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="2" />
+        </Column>
+        <Column name="debt_type" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="2" />
+        </Column>
+        <Column name="remark" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="goods_detail">
+      <Drawing expanded="true" location="834,306" dimensions="207,186" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="creator_id" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="create_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+        <Column name="goods_name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="100" />
+        </Column>
+        <Column name="goods_unit" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="unit_price" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DOUBLE" size="22" />
+        </Column>
+        <Column name="remark" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="TEXT" size="65535" />
+        </Column>
+        <Column name="type_id" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="goods_type">
+      <Drawing expanded="true" location="835,592" dimensions="204,147" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="creator_id" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="create_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+        <Column name="type_name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="100" />
+        </Column>
+        <Column name="parent_id" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="remark" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="TEXT" size="65535" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="iouser_group_relation">
+      <Drawing expanded="true" location="30,792" dimensions="222,165" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="creator_id" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="create_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+        <Column name="group_name" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="parent_id" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="order_num" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="remark" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="1000" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="iouser">
+      <Drawing expanded="true" location="76,346" dimensions="241,346" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="group_id" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="user_name" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="16" />
+        </Column>
+        <Column name="creator_id" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="sex" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="1" />
+        </Column>
+        <Column name="age" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="company_name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="100" />
+        </Column>
+        <Column name="home_address" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="200" />
+        </Column>
+        <Column name="company_address" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="200" />
+        </Column>
+        <Column name="company_zip" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="6" />
+        </Column>
+        <Column name="home_zip" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="6" />
+        </Column>
+        <Column name="home_phone" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="company_phone" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="mobile_phone" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="order_num" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="remark" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="4000" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="talk">
+      <Drawing expanded="true" location="607,821" dimensions="182,106" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="user_id" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="message" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="TEXT" size="65535" />
+        </Column>
+        <Column name="msg_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATETIME" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="user">
+      <Drawing expanded="true" location="329,1057" dimensions="200,107" />
+      <Columns>
+        <Column name="userid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="userName" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="loginName" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="password" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="8" />
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <Relationships>
+    <Relationship name="FK27978CEB38D740D">
+      <Details primary_table="user" foreign_table="contactinfo">
+        <PrimaryKeys>
+          <ColumnName name="userid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="userid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK7248DD9F1F60B52E">
+      <Details primary_table="goods_detail" foreign_table="finance_goods_detail">
+        <PrimaryKeys>
+          <ColumnName name="id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="goods_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FKAFB4C8F58447A4A3">
+      <Details primary_table="iouser" foreign_table="finance_money_detail">
+        <PrimaryKeys>
+          <ColumnName name="id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="borrow_userid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="goods_detail_ibfk_1">
+      <Details primary_table="goods_type" foreign_table="goods_detail">
+        <PrimaryKeys>
+          <ColumnName name="id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="type_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK_GROUP_RELATION_CREATORID">
+      <Details primary_table="user" foreign_table="iouser_group_relation">
+        <PrimaryKeys>
+          <ColumnName name="userid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="creator_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK_GROUP_RELATION_GROUPID">
+      <Details primary_table="iouser_group_relation" foreign_table="iouser_group_relation">
+        <PrimaryKeys>
+          <ColumnName name="id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="parent_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK_IOUSER_GROUPID">
+      <Details primary_table="iouser_group_relation" foreign_table="iouser">
+        <PrimaryKeys>
+          <ColumnName name="id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="group_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK3634ACDC9D2FF6">
+      <Details primary_table="user" foreign_table="talk">
+        <PrimaryKeys>
+          <ColumnName name="userid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="user_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+  </Relationships>
+</ERDiagram>
+

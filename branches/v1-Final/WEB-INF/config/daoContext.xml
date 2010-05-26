@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="daoTemplate" abstract="true" lazy-init="true">
+		<property name="sessionFactory">
+            <ref bean="sessionFactory"/>
+        </property>
+	</bean>
+
+	<bean id="baseDao" class="net.yanhl.base.dao.BaseDaoHibernate" parent="daoTemplate"/>
+	<bean id="userDao" class="net.yanhl.user.dao.UserDaoHibernate" parent="daoTemplate"/>
+	<bean id="iouserDao" class="net.yanhl.iouser.dao.IOUSerDaoHibernate" parent="daoTemplate"/>
+	<bean id="groupDao" class="net.yanhl.tree.dao.GroupRelationDaoHibernate" parent="daoTemplate"/>
+	<bean id="goodsTypeDao" class="net.yanhl.goods.dao.GoodsTypeDaoHibernate" parent="daoTemplate"/>
+	<bean id="goodsDetailDao" class="net.yanhl.goods.dao.GoodsDetailDaoHibernate" parent="daoTemplate"/>
+	<bean id="financeDao" class="net.yanhl.finance.dao.FinanceDaoHibernate" parent="daoTemplate"/>
+	<bean id="financeInDao" class="net.yanhl.finance.dao.FinanceInDaoHibernate" parent="daoTemplate"/>
+	<bean id="talkDao" class="net.yanhl.talk.dao.TalkDaoImpl" parent="daoTemplate"/>
+</beans>
