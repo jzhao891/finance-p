@@ -26,9 +26,7 @@
 		<style type="text/css">
 			@IMPORT url("../css/all.css");
 			@IMPORT url("../css/screen.css");
-			@IMPORT url("../css/list.css");
 			@IMPORT url("../css/tree/tree.css");
-			@IMPORT url("../css/validator/validator.css");
 			@IMPORT url("../css/weebox/weebox.css");
 			@IMPORT url("../css/log/blackbird.css");
 		</style>
@@ -37,22 +35,19 @@
 	<body>
 		<html:form action="/iouser/groupList.do" method="post">
 			<div>
-				<span id='title'>债务人分组管理</span>
+				<span id='title'>
+					<img src="../images/group.png" alt="债务人管理"/>
+					债务人分组管理
+					<img id="queryImg" src="../images/search.gif"/>
+				</span>
 				<div id='query'>
-					<fieldset>
-						<legend align="center">
-							<b><a id='queryArea' href='javascript:;'>显示查询条件</a></b>
-						</legend>
-						<div id='queryWords' style='display:none'>
-							<span>
-								<label for="qgroupName">组名：<input type='text' id='qgroupName' name='groupName' value="${groupName }"/></label>
-							</span>
-							<span style='text-align: right'>
-								<input type='submit' name="submitBtn" id='submitBtn' title="查询" value="查 询"/>
-								<input type="button" id="resetBtn" title="清除查询条件" value="重 置" />
-							</span>
-						</div>
-					</fieldset>
+					<span>
+						<label for="qgroupName">组名：<input type='text' id='qgroupName' name='groupName' value="${groupName }"/></label>
+					</span>
+					<span style='text-align: right'>
+						<input type='submit' name="submitBtn" id='submitBtn' title="查询" value="查 询"/>
+						<input type="button" id="resetBtn" title="清除查询条件" value="重 置" />
+					</span>
 				</div>
 				<div id='resultTip' style='display:none'></div>
 				

@@ -52,12 +52,7 @@ H2 .anchors A {
 .sampleAnchors {
 	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 1px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
 }
-.anchors:unknown {
-	CLEAR: both; DISPLAY: block; content: " "
-}
-.sampleAnchors:unknown {
-	CLEAR: both; DISPLAY: block; content: " "
-}
+
 .anchors LI {
 	FLOAT: left; MARGIN: 0px 1px 0px 0px
 }

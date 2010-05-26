@@ -3,16 +3,15 @@
 	<head>
 		<title>测试页面</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<script type="text/javascript" src="../common/js/jquery-last.js"></script>
+		<link rel="stylesheet" href="../css/weebox/weebox.css"/>
+		<script type="text/javascript" src="../common/js/jquery-last-unzip.js"></script>
 		<script type="text/javascript" src="../common/js/plugin/bgiframe.js"></script>
 		<script type="text/javascript" src="../common/js/plugin/weebox.js"></script>
 		<script type="text/javascript" src="test.js"></script>
-		<style type="text/css">
-@IMPORT url("../css/weebox/weebox.css");
-</style>
 	</head>
 
 	<body>
+		<div id="baidu"></div>
 		<div id="remotehtml"></div>
 		<div id='remoteFile'></div>
 		<hr />
@@ -72,16 +71,56 @@
 			radio three
 		</div>
 		<hr />
+		
+		<table id="datas" width="50%">
+			<tr>
+				<td>内容1</td>
+				<td>
+					<a herf="#"  id="1"  class="link">删除1</a>
+				</td>
+			</tr>
+			<tr>
+				<td>内容2</td>
+				<td>
+					<a herf="#"  id="2"  class="link">删除2</a>
+				</td>
+			</tr> 
+			<tr>
+				<td>内容3</td>
+				<td>
+					<a herf="#"  id="3"  class="link">删除3</a>
+				</td>
+			</tr> 
+			<tr>
+				<td>内容4</td>
+				<td>
+					<a herf="#"  id="4"  class="link">删除4</a>
+				</td>
+			</tr> 
+		</table>
+		
+		<p>内容<a href="javascript:void(0);" onclick="javascript:del(this)">111</a></p>
+		
 		<select id="selectpro" class="" style="width: 6em;" name="province">
 			<option value="-1">
 				选择省份
 			</option>
-			<option name="7577" value="安徽">
+			<option name="7577" value="安徽" selected="selected">
 				安徽
 			</option>
 			<option name="3234" value="上海">
 				上海
 			</option>
 		</select>
+		<button id="emptyBtn">清空</button>
+		<hr />
+		<select name="color" id="color">
+	<option value="red">红</option>
+	<option value="green">绿</option>
+	<option value="blue">蓝</option>
+	<option value="yellow">黄</option>
+	<option value="cyan">青</option>
+	<option value="purple">紫</option>
+</select>
 	</body>
 </html>

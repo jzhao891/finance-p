@@ -231,6 +231,7 @@ function modifyCallback(json) {
  * @param {} userId 用户ID
  */
 function showDetail(userId) {
+	// 创建一个对话框组件
 	var dialog = $.weeboxs.open('showDetail.html', {
 		title: '正在加载用户信息……',
 		contentType: 'ajax',
@@ -244,22 +245,26 @@ function showDetail(userId) {
 		onopen: innerShowDetail
 	});
 	
-	//内部实现载入、设置值
+	//内部函数，实现债务人详细信息的载入、设置值
 	function innerShowDetail() {
 		var random = (Math.random() + '').substring(0, 4);
 		var startTime = new Date().getTime();
 		if(typeof log == 'object') {
 			log.profile(random + '>加载用户S>' + common.getTimeWithMs());
 		}
+		// 获得JSON格式的数据
 		$.getJSON('load.do',{id : userId}, function(json) {
 			if(typeof log == 'object') {
 				log.profile(random + '>加载用户E，耗时：' + (new Date().getTime() - startTime) + "(ms)");
 			}
+			
+			// 根据key设置value
 			for (key in json) {
 				if(key == 'id'){
 					$('#detailDiv #' + key).val(json[key]);
 				} else {
 					if(json[key] == ''){
+						// 没有值设置为空
 						$('#detailDiv #' + key).html('&nbsp;');
 					} else if(key == 'sex'){
 						$('#detailDiv #' + key).html(json[key] == '0' ? '女' : '男');
@@ -272,6 +277,7 @@ function showDetail(userId) {
 					}
 				}
 			}
+			
 			//设置对话框标题和内容
 			$('#detailDiv').removeAttr('class');
 			dialog.setTitle('查看人员[' + json['userName'] + ']详细资料');

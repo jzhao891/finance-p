@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 public class ListQuery extends BaseQuery {
 
 	private int pageIndex = 0;// 当前页
-	private int pageSize = 10;// 每页显示的条数
+	private int pageSize = 2;// 每页显示的条数
 
 	public ListQuery(Class masterPojo, HttpServletRequest request) {
 		super.setMasterPojo(masterPojo);

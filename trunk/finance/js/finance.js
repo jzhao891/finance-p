@@ -57,7 +57,7 @@ function registeTree() {
 		onselected	: function(treeObj) {}
 	});
 	//选择树
-	$('#qborrowUserName').click(function(){
+	$('#qborrowUserName,#qgetUser').click(function(){
 		tree.registeTree({
 			title	: '选择、按照[债务人]查询',
 			id		: '#qborrowUser', 

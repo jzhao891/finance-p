@@ -28,6 +28,7 @@
 	margin: 0;
 	padding: 0 0 0 4px;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 #tabs a span {

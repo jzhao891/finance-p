@@ -1,18 +1,41 @@
 $(document).ready(function() {
+	
+	$('#color option').each(function(){
+		//alert($(this).val());
+	});
+	
+	var tv = $.makeArray($('#color option'));
+	alert(tv[1]);
 			// $('#remotehtml').load('../index.jsp');
-	alert($('#radios :radio').length);
+	//alert($('#radios :radio').length);
+	//alert($('select[name=province] option:selected').text());
 	$('#radios :radio').change(function(){
 		if($(this).attr('checked') == true){
 			$(this).attr('checked', 'false');
 		}
 	});
 	
+	//$('#baidu').load('http://www.baidu.com');
+	
 	$('#selectpro').change(function(){
 		alert($(':selected', this).attr('name'));
+	});
+	
+	// 获得删除ID 
+	$('#datas .link').click(function(){
+		alert(this.id);
+		$(this).parent().parent().remove();
+	});
+	
+	$('#emptyBtn').click(function(){
+		$('#selectpro').empty();
 	});
 });
 // $('#remoteFile').load('http://news.kg/wp-content/uploads/tree/d&d/loadTree.php');
 
+function del(tt) {
+	alert(tt.parentElement.removeNode(true));
+}
 
 function ot() {
 	var dialogBox;
