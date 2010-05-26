@@ -8,7 +8,7 @@
 <!-- 定义常、变量 -->
 <%
 String siteName = "账务管理系统";
-String pageSize = "10";
+String pageSize = "2";
 %>
 <%
 pageContext.setAttribute("pageSize",pageSize);

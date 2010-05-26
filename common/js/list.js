@@ -39,7 +39,7 @@ List.prototype.initList = function() {
  * 初始化查询区域
  */
 List.prototype.initQueryArea = function() {
-	$('#queryArea').bind('click', this.queryArea);
+	$('#queryImg').bind('click', this.queryArea);
 	this.queryArea('init');
 };
 
@@ -219,6 +219,11 @@ List.prototype.showHiddenEdit = function(options) {
 			$('#edit').hide('slow');
 		}
 	}
+	
+	// 如果是IE通过JS设置编辑块的显示样式
+	if ($.browser.msie)
+		$('#formTable tr:not(:eq(0)) td:nth-child(1)').css('text-align', 'right');
+		
 	if ($.isFunction(options['callback'])) {
 		options['callback']();
 	}
@@ -242,15 +247,13 @@ List.prototype.cancel = function() {
  */
 List.prototype.queryArea = function(type) {
 	// 查询区域中不为空的组件个数
-	var notEmpty = $("#queryWords :text[value!='']").length;
-	if ($('#queryWords').css('display') == 'block') {
-		$('#queryWords').slideToggle('fast');
-		$('#queryArea').html('显示查询条件');
+	var notEmpty = $("#query :text[value!='']").length;
+	if ($('#query').css('display') == 'block') {
+		$('#query').slideToggle('fast');
 	} else if (notEmpty > 0
-			|| (type != 'init' && $('#queryWords').css('display') == 'none')) {
+			|| (type != 'init' && $('#query').css('display') == 'none')) {
 		// 不为空的组件个数多于一个就显示
-		$('#queryWords').slideToggle('fast');
-		$('#queryArea').html('隐藏查询条件');
+		$('#query').slideToggle('fast');
 	}
 }
 

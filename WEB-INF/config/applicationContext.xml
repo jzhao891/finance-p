@@ -7,8 +7,8 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql:///finance?useUnicode=true&amp;characterEncoding=utf8"/>
-        <property name="username" value="yhl"/>
-        <property name="password" value="yhl"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
         <property name="maxActive" value="20"/>
         <property name="maxIdle" value="10"/>
         <property name="initialSize" value="1"/>

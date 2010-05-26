@@ -22,31 +22,22 @@
 		<style type="text/css">
 			@IMPORT url("../../css/all.css");
 			@IMPORT url("../../css/screen.css");
-			@IMPORT url("../../css/list.css");
 			@IMPORT url("../../css/weebox/weebox.css");
-			@IMPORT url("../../css/validator/validator.css");
 		</style>
 	</head>
 
 	<body>
 		<html:form action="/goods/type/goodsTypeList.do" method="post">
 			<div>
-				<span id='title'>物品类型管理</span>
+				<span id='title'>物品类型管理<img id="queryImg" src="../../images/search.gif"/></span>
 				<div id='query'>
-					<fieldset>
-						<legend align="center">
-							<b><a id='queryArea' href='javascript:;'>显示查询条件</a></b>
-						</legend>
-						<div id='queryWords' style='display:none'>
-							<span>
-								<label for='qtypeName'>类型名称：<input type='text' id='qtypeName' name='typeName' value="${typeName }"/></label>
-							</span>
-							<span style='text-align: right'>
-								<input type='submit' name="submitBtn" id='submitBtn' title="查询" value="查 询"/>
-								<input type="reset" id="resetBtn" title="清除查询条件" value="重 置" />
-							</span>
-						</div>
-					</fieldset>
+					<span>
+						<label for='qtypeName'>类型名称：<input type='text' id='qtypeName' name='typeName' value="${typeName }"/></label>
+					</span>
+					<span style='text-align: right'>
+						<input type='submit' name="submitBtn" id='submitBtn' title="查询" value="查 询"/>
+						<input type="reset" id="resetBtn" title="清除查询条件" value="重 置" />
+					</span>
 				</div>
 				<div id='resultTip' style='display:none'></div>
 				<display:table name="resultList" pagesize="${pageSize }" class="its"

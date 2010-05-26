@@ -293,9 +293,9 @@
 				self.setElementPosition();
 			}		
 			if (self.options.animate) {				
-				self.dh.fadeIn("slow");
+				self.dh.fadeIn("normal");
 				if (self.mh) {
-					self.mh.fadeIn("normal");
+					self.mh.fadeIn("fast");
 				}
 			} else {
 				self.dh.show();
@@ -347,9 +347,9 @@
 		
 		this.close = function() {
 			if (self.animate) {
-				self.dh.fadeOut("slow", function () { self.dh.hide(); });
+				self.dh.fadeOut("normal", function () { self.dh.hide(); });
 				if (self.mh) {
-					self.mh.fadeOut("normal", function () { self.mh.hide(); });
+					self.mh.fadeOut("fast", function () { self.mh.hide(); });
 				}
 			} else {
 				self.dh.hide();
